@@ -1,0 +1,59 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>COVID19 LIVE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+          <p id="brand_name">Covid19 Live</p>
+      </div>
+    </nav>
+    <div align="center">
+      <p id="india" style="font-family: Araial"><strong>India Total</strong></p>
+    </div>
+
+    <div id="main_count">
+      <ul id="list">
+        <li class="ico_holder">
+          <img src="{% static 'css/images/blue_ico.png' %}">
+        </li>
+        <li class="tags"><strong>{{active}}</strong></li>
+        <li>
+          <img src="{% static 'css/images/green_ico.png' %}">
+        </li>
+        <li class="tags"><strong>{{cured}}</strong></li>
+        <li>
+          <img src="{% static 'css/images/red_ico.png' %}">
+        </li>
+        <li class="tags"><strong style="margin-left: 8px">{{deaths}}</strong></li>
+        <li>
+          <img src="{% static 'css/images/brown_ico.png' %}">
+        </li>
+        <li class="tags"><strong style="margin-left: 23px">{{migrated}}</strong></li>
+      </ul>
+    </div>
+
+    <div class="container" align="center">
+      <p class="state-name"><a href="andhrapradesh">Andhra Pradesh</a></p>
+      <hr id="line">
+      <p class="state-name"><a href="maharashtra">Maharashtra</a></p>
+      <hr id="line">
+      <p class="state-name"><a href="karnataka">Karnataka</a></p>
+      <hr id="line">
+      <p class="state-name"><a href="tamilnadu">Tamil Nadu</a></p>
+      <hr id="line">
+      <p class="state-name"><a href="kerala">Kerala</a></p>
+      <hr id="line">
+    </div>
+  </body>
+</html>

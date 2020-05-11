@@ -1,0 +1,156 @@
+body{
+  height: 950px;
+}
+
+
+.navbar{
+  background: #FEBA27;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+
+.icon-bar{
+  background: #FEBA27;
+}
+
+
+#brand_name{
+  font-family: Retrofunkscript;
+  color: white;
+  font-size: 40px;
+  padding-left: 10px;
+  padding-top: 5px;
+  pointer-events: none;
+}
+
+
+#home{
+  color: white;
+  background-color: #FEBA27;
+  font-size: 20px ;
+  margin-left:100px ;
+  margin-top: 10px;
+}
+
+
+#line{
+  border-style: inset; 
+  border-width: 2px;
+  width: 90%;
+}
+
+
+#tog_but{
+  background-color: white;
+  margin-top: 17px;
+}
+
+
+
+.state-name{
+  font-family:VeganStyle;
+  font-size:40px;
+  margin-bottom: 30px;
+}
+
+
+
+img{
+  width: 200px;
+  height: 200px;
+  padding-right: 2px;
+}
+
+
+ul{
+  list-style: none;
+  text-align:center;
+}
+
+
+#list li {
+    display: inline;
+}
+
+.tags{
+  font-size: 20px;
+  margin-right: 50px; 
+  margin-left: -129px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+#main_count{
+  margin-bottom: 30px;
+}
+
+
+#india{
+  font-size: 40px;
+}
+
+
+
+
+@media(max-width: 1000px){
+  #brand_name{
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+  #home{
+    float: right;
+  }
+
+}
+
+
+
+
+
+
+@media(max-device-width: 500px){
+  #brand_name{
+    padding-left: 20px;
+    padding-top: 5px;
+    font-size: 35px;
+  }
+  #tog_but{
+    margin-top: 10px;
+  }
+  .state-name{
+    font-size:30px;
+    margin-bottom: 20px;
+  }
+  table{
+    width: 90%;
+  }
+  
+  .tags{
+    margin-right: 20px; 
+    margin-left: -90px;
+  }
+  ul{
+    margin-left: -40px;
+  }
+  img{
+    width: 100px;
+    height: 100px;
+  }
+  
+}
+
+@font-face {
+  font-family: Retrofunkscript;
+  src: url('fonts/Retrofunkscript.otf');
+
+}
+
+
+@font-face {
+  font-family: VeganStyle;
+  src: url('fonts/VeganStyle.ttf');
+
+}

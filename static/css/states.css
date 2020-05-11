@@ -1,0 +1,123 @@
+body{
+  height: 1000px;
+}
+
+
+.navbar{
+  background: #FEBA27;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+
+.icon-bar{
+  background: #FEBA27;
+}
+
+
+#brand_name{
+  font-family: Retrofunkscript;
+  color: white;
+  font-size: 40px;
+  padding-left: 10px;
+  padding-top: 5px;
+  pointer-events: none;
+}
+
+
+#home{
+  color: white;
+  background-color: #FEBA27;
+  font-size: 20px ;
+  margin-left:100px ;
+  margin-top: 10px;
+}
+
+
+#tog_but{
+  background-color: white;
+  margin-top: 17px;
+}
+
+
+
+.state-name{
+  font-family:VeganStyle;
+  font-size:40px;
+  margin-bottom: 40px;
+}
+
+table{
+  width:400px; 
+  margin-top: 30px;
+}
+
+
+#website{
+  margin-top: 20px;
+}
+
+
+table,td{
+  border: 2px solid #FEBA27;
+  height: 50px;
+}
+
+
+.lab{
+  text-indent: 20px;
+}
+
+
+.val{
+  text-align: center;
+}
+
+
+
+@media(max-width: 1000px){
+  #brand_name{
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+  #home{
+    float: right;
+  }
+
+}
+
+
+
+
+@media(max-device-width: 500px){
+  #brand_name{
+    padding-left: 20px;
+    padding-top: 5px;
+    font-size: 35px;
+  }
+  #tog_but{
+    margin-top: 10px;
+  }
+  .state-name{
+    font-size:30px;
+  }
+  table{
+    width: 90%;
+  }
+
+}
+
+@font-face {
+  font-family: Retrofunkscript;
+  src: url('fonts/Retrofunkscript.otf');
+
+}
+
+
+@font-face {
+  font-family: VeganStyle;
+  src: url('fonts/VeganStyle.ttf');
+
+}
