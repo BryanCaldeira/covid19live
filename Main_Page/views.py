@@ -152,24 +152,24 @@ def Andhrapradesh(requests):
 
 		soup = BeautifulSoup(page.content, 'html.parser')
 
-		content = soup.find_all('td')
+		conf_cases = soup.find(id="lblConfirmed")
+		conf_cases = conf_cases.get_text()
 
-		conf_cases_list = content[1].get_text().split()
-		conf_cases = conf_cases_list[2]
 
-		act_cases_list = content[3].get_text().split()
-		act_cases = act_cases_list[2]
 
-		rec_cases_list = content[5].get_text().split()
-		rec_cases = rec_cases_list[2]
+		act_cases = soup.find(id="lblActive")
+		act_cases = act_cases.get_text()
 
-		deaths_list = content[8].get_text().split()
-		deaths = deaths_list[1]
+
+		rec_cases = soup.find(id="lblDischarged")
+		rec_cases = rec_cases.get_text()
+
+		deaths = soup.find(id="lblDeaths")
+		deaths = deaths.get_text()
 
 		fatality = (int(deaths)/int(conf_cases))*100
+		fatality = str(round(fatality,2))+'%'
 
-		fatality = round(fatality,2)
-		fatality = str(fatality)+'%'
 
 	except:
 		conf_cases='N/A'
