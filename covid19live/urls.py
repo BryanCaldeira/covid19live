@@ -3,7 +3,7 @@ from django.urls import path
 from Main_Page import views
 
 urlpatterns = [
-    path('ap/', views.AndhraPradesh),
+    path('andhrapradesh/', views.Andhrapradesh),
     path('admin/', admin.site.urls),
     path('', views.Main , name="main"),
     path('karnataka/', views.Karnataka),
