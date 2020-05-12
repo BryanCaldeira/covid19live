@@ -8,7 +8,7 @@ urlpatterns = [
     path('karnataka/', views.Karnataka),
     path('tamilnadu/', views.Tamilnadu),
     path('kerala/', views.Kerala),
-    path('andhrapradesh/', views.Andhrapradesh),
+    path('andhrapradesh/', views.AndhraPradesh),
     path('maharashtra/', views.Maharashtra),
     path('telangana/', views.Telangana),
 
