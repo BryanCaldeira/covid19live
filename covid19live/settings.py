@@ -12,7 +12,7 @@ SECRET_KEY = 'q*7(i9h@*2$stjcyb_cpjwvm%pmp0nx^2dfve%tirp18*xl71e'
 
 
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['covid19live-india.herokuapp.com']
 
