@@ -18,19 +18,21 @@ def Main(requests):
 
 		content = [int(i) for i in content if i.isdigit()]
 
-		active=content[0]
-		cured =content[1]
-		deaths=content[2]
-		migrated=content[3]
+		active=int(content[0])
+		cured =int(content[1])
+		deaths=int(content[2])
+		migrated=int(content[3])
+		confirmed = active+cured+deaths+migrated
 
 	except:
+		confirmed='N/A'
 		active='N/A'
 		cured ='N/A'
 		deaths='N/A'
 		migrated='N/A'
 
 
-	return render(requests,'index.html',{'active':active, 'cured':cured, 'deaths':deaths, 'migrated':migrated})
+	return render(requests,'index.html',{'confirmed':confirmed, 'active':active, 'cured':cured, 'deaths':deaths, 'migrated':migrated})
 
 
 def Karnataka(requests):
