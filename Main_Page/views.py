@@ -263,29 +263,119 @@ def Telangana(requests):
 
 
 def Delhi(requests):
-	URL = 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Delhi'
+	try:
+		URL = 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Delhi'
 
-	page = req.get(URL)
+		page = req.get(URL)
 
-	soup = BeautifulSoup(page.content, 'html.parser')
+		soup = BeautifulSoup(page.content, 'html.parser')
 
-	content = soup.find_all('td')
+		content = soup.find_all('td')
 
-	conf_cases_list = content[11].get_text().split()
-	conf_cases = conf_cases_list[0]
+		conf_cases_list = content[11].get_text().split()
+		conf_cases = conf_cases_list[0]
 
-	act_cases = content[12].get_text()
-
-
-	rec_cases_list = content[13].get_text().split()
-	rec_cases = rec_cases_list[0]
-
-	deaths_list = content[14].get_text().split()
-	deaths = deaths_list[0]
+		act_cases = content[12].get_text()
 
 
-	fatality_list = content[15].get_text().split()
-	fatality = fatality_list[0]
+		rec_cases_list = content[13].get_text().split()
+		rec_cases = rec_cases_list[0]
+
+		deaths_list = content[14].get_text().split()
+		deaths = deaths_list[0]
+
+
+		fatality_list = content[15].get_text().split()
+		fatality = fatality_list[0]
+
+	except:
+		conf_cases='N/A'
+		act_cases='N/A'
+		rec_cases='N/A'
+		deaths='N/A'
+		fatality='N/A'
 
 
 	return render(requests, 'delhi.html', {'conf_cases':conf_cases, 'act_cases':act_cases, 'rec_cases':rec_cases, 'deaths':deaths, 'fatality':fatality})
+
+
+
+
+def Uttarpradesh(requests):
+	try:
+		URL = 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Uttar_Pradesh'
+
+		page = req.get(URL)
+
+		soup = BeautifulSoup(page.content, 'html.parser')
+
+		content = soup.find_all('td')
+
+
+		conf_cases_list = content[7].get_text().split()
+		conf_cases = conf_cases_list[0]
+
+
+
+		act_cases_list = content[8].get_text().split()
+		act_cases = act_cases_list[0]
+
+		rec_cases_list = content[9].get_text().split()
+		rec_cases = rec_cases_list[0]
+
+
+		deaths_list = content[10].get_text().split()
+		deaths = deaths_list[0]
+
+		conf = conf_cases.split(',')
+		conf = ''.join(conf)
+
+		fatality = str(round((int(deaths)/int(conf))*100,2))+'%'
+
+
+	except:
+		conf_cases='N/A'
+		act_cases='N/A'
+		rec_cases='N/A'
+		deaths='N/A'
+		fatality='N/A'
+
+
+
+	return render(requests, 'uttarpradesh.html', {'conf_cases':conf_cases, 'act_cases':act_cases, 'rec_cases':rec_cases, 'deaths':deaths, 'fatality':fatality})
+
+
+def Punjab(requests):
+	try:
+		URL = 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Punjab,_India'
+
+		page = req.get(URL)
+
+		soup = BeautifulSoup(page.content, 'html.parser')
+
+		content = soup.find_all('td')
+
+		conf_cases_list = content[7].get_text().split()
+		conf_cases = conf_cases_list[0]
+
+		act_cases_list = content[8].get_text().split()
+		act_cases = act_cases_list[0]
+
+
+		rec_cases_list = content[10].get_text().split()
+		rec_cases = rec_cases_list[0]
+
+		deaths_list = content[11].get_text().split()
+		deaths = deaths_list[0]
+
+		fatality = str(round((int(deaths)/int(conf_cases))*100,2))+'%'
+
+	except:
+		conf_cases='N/A'
+		act_cases='N/A'
+		rec_cases='N/A'
+		deaths='N/A'
+		fatality='N/A'
+
+
+	return render(requests, 'punjab.html', {'conf_cases':conf_cases, 'act_cases':act_cases, 'rec_cases':rec_cases, 'deaths':deaths, 'fatality':fatality})
