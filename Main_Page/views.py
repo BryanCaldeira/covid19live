@@ -148,28 +148,31 @@ def Kerala(requests):
 
 def Andhrapradesh(requests):
 	try:
-		URL = 'http://hmfw.ap.gov.in/covid_dashboard.aspx'
+		URL = 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Andhra_Pradesh'
 
 		page = req.get(URL)
 
 		soup = BeautifulSoup(page.content, 'html.parser')
 
-		conf_cases = soup.find(id="lblConfirmed")
-		conf_cases = conf_cases.get_text()
+		content = soup.find_all('td')
+
+		conf_cases_list = content[7].get_text().split()
+		conf_cases = conf_cases_list[0]
+
+		act_cases_list = content[8].get_text().split()
+		act_cases = act_cases_list[0]
+
+		rec_cases_list = content[9].get_text().split()
+		rec_cases = rec_cases_list[0]
+
+		deaths_list = content[10].get_text().split()
+		deaths = deaths_list[0]
 
 
+		conf = conf_cases.split(',')
+		conf = ''.join(conf)
 
-		act_cases = soup.find(id="lblActive")
-		act_cases = act_cases.get_text()
-
-
-		rec_cases = soup.find(id="lblDischarged")
-		rec_cases = rec_cases.get_text()
-
-		deaths = soup.find(id="lblDeaths")
-		deaths = deaths.get_text()
-
-		fatality = (int(deaths)/int(conf_cases))*100
+		fatality = (int(deaths)/int(conf))*100
 		fatality = str(round(fatality,2))+'%'
 
 
