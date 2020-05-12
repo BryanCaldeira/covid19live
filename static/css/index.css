@@ -87,11 +87,10 @@ ul{
   margin-bottom: 30px;
 }
 
-
 #india{
-  font-size: 40px;
+  font-size: 60px;
+  font-family: MassenetBold-Bold;
 }
-
 
 
 
@@ -140,6 +139,9 @@ ul{
     width: 100px;
     height: 100px;
   }
+  #india{
+    font-size: 40px;
+  }
   
 }
 
@@ -154,4 +156,11 @@ ul{
   font-family: VeganStyle;
   src: url('fonts/VeganStyle.ttf');
 
+}
+
+
+
+@font-face{
+  font-family: MassenetBold-Bold;
+  src: url('fonts/MassenetBold-Bold.otf');
 }
