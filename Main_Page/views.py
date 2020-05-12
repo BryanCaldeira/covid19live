@@ -144,7 +144,7 @@ def Kerala(requests):
 
 
 
-def AndhraPradesh(requests):
+def Andhrapradesh(requests):
 	try:
 		URL = 'http://hmfw.ap.gov.in/covid_dashboard.aspx'
 
