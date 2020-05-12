@@ -14,5 +14,6 @@ urlpatterns = [
     path('delhi/', views.Delhi),
     path('uttarpradesh/', views.Uttarpradesh),
     path('punjab/', views.Punjab),
+    path('westbengal/', views.Westbengal),
 
 ]
