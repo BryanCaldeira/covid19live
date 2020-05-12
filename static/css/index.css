@@ -3,9 +3,9 @@ body{
 }
 
 
-.navbar{
-  background-color: #FEBA27;
-  width:100%;
+.navbar {
+  width: 100%;
+  background: #FEBA27;
 }
 
 
@@ -54,7 +54,6 @@ body{
 }
 
 
-
 img{
   width: 200px;
   height: 200px;
@@ -67,13 +66,13 @@ ul{
   text-align:center;
 }
 
+ul{
+    margin-left: -60px;
+}
+
 
 #list li {
     display: inline;
-}
-
-ul{
-    margin-left: -60px;
 }
 
 .tags{
@@ -90,8 +89,13 @@ ul{
 
 
 #india{
-  font-size: 60px;
-  font-family: MassenetBold-Bold;
+  width: 220px;
+  height: 80px;
+}
+
+#tot{
+  font-family: Arial;
+  font-size: 30px;
 }
 
 
@@ -135,13 +139,16 @@ ul{
     margin-right: 20px; 
     margin-left: -90px;
   }
-  
+  ul{
+    margin-left: -40px;
+  }
   img{
     width: 100px;
     height: 100px;
   }
-  ul{
-    margin-left: -40px;
+  #india{
+    width: 120px;
+    height: 50px;
   }
   
 }
@@ -159,8 +166,3 @@ ul{
 
 }
 
-
-@font-face{
-  font-family: MassenetBold-Bold;
-  src: url('fonts/MassenetBold-Bold.otf');
-}
