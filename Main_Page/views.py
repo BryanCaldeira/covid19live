@@ -379,3 +379,41 @@ def Punjab(requests):
 
 
 	return render(requests, 'punjab.html', {'conf_cases':conf_cases, 'act_cases':act_cases, 'rec_cases':rec_cases, 'deaths':deaths, 'fatality':fatality})
+
+
+def Westbengal(requests):
+	try:
+		URL = 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_West_Bengal'
+
+		page = req.get(URL)
+
+		soup = BeautifulSoup(page.content, 'html.parser')
+
+		content = soup.find_all('td')
+
+		conf_cases_list = content[7].get_text().split()
+		conf_cases = conf_cases_list[0]
+
+		act_cases_list = content[8].get_text().split()
+		act_cases = act_cases_list[0]
+
+
+		rec_cases_list = content[9].get_text().split()
+		rec_cases = rec_cases_list[0]
+
+		deaths_list = content[10].get_text().split()
+		deaths = deaths_list[0]
+
+		fatality = str(round((int(deaths)/int(conf_cases))*100,2))+'%'
+
+	except:
+		conf_cases='N/A'
+		act_cases='N/A'
+		rec_cases='N/A'
+		deaths='N/A'
+		fatality='N/A'
+		
+
+
+	return render(requests, 'westbengal.html', {'conf_cases':conf_cases, 'act_cases':act_cases, 'rec_cases':rec_cases, 'deaths':deaths, 'fatality':fatality})
+
