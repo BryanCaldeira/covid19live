@@ -229,18 +229,26 @@ def Maharashtra(requests):
 
 def Telangana(requests):
 	try:
-		URL = 'https://covid19.telangana.gov.in/'
+		URL = 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_India'
 
 		page = req.get(URL)
 
 		soup = BeautifulSoup(page.content, 'html.parser')
 
-		content = soup.find_all(class_="uagb-column__inner-wrap")
-
-		#content = [int(i) for i in content[2].get_text().split() if i.isdigit()]
+		content = soup.find_all('tr')
 
 
-		print('\n\n\n\n\n\n',content[5].get_text())
+		content = content[135].get_text().split()
+
+		conf_cases = content[2]
+		deaths = content[3]
+		rec_cases = content[4]
+		act_cases = content[5]
+
+
+		fatality = (int(deaths)/int(conf_cases))*100
+
+		fatality = str(round(fatality,2)) +'%'
 
 	except:
 		conf_cases='N/A'
@@ -250,7 +258,7 @@ def Telangana(requests):
 		fatality='N/A'
 
 
-	return render(requests, 'telangana.html')
+	return render(requests, 'telangana.html', {'conf_cases':conf_cases, 'act_cases':act_cases, 'rec_cases':rec_cases, 'deaths':deaths, 'fatality':fatality})
 
 
 
