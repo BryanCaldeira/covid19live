@@ -251,3 +251,33 @@ def Telangana(requests):
 
 
 	return render(requests, 'telangana.html')
+
+
+
+def Delhi(requests):
+	URL = 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Delhi'
+
+	page = req.get(URL)
+
+	soup = BeautifulSoup(page.content, 'html.parser')
+
+	content = soup.find_all('td')
+
+	conf_cases_list = content[11].get_text().split()
+	conf_cases = conf_cases_list[0]
+
+	act_cases = content[12].get_text()
+
+
+	rec_cases_list = content[13].get_text().split()
+	rec_cases = rec_cases_list[0]
+
+	deaths_list = content[14].get_text().split()
+	deaths = deaths_list[0]
+
+
+	fatality_list = content[15].get_text().split()
+	fatality = fatality_list[0]
+
+
+	return render(requests, 'delhi.html', {'conf_cases':conf_cases, 'act_cases':act_cases, 'rec_cases':rec_cases, 'deaths':deaths, 'fatality':fatality})
