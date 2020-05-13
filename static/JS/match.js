@@ -66,9 +66,7 @@ function scrollWin()
     	else{
     		document.getElementById("tag_war").innerHTML = x.concat(" not found!")
     	}
-    	if(window.screen.width<=500){
-    		window.scrollBy(0, -40);
-    	}
+    	window.scrollBy(0, -40);
     	var x = document.getElementById("search_input").value="";
 
     }
