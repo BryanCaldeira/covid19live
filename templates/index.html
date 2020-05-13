@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="{% static 'JS/match.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
@@ -17,13 +18,13 @@
       <div class="container-fluid">
           <p id="brand_name">Covid19 Live</p>
       </div>
-    </nav>
+    </nav class="main">
+
     <div align="center">
       <img id="india" src="{% static 'css/images/india.png' %}">
       <p><strong id="tot">Total</strong></p>
     </div>
 
-    <div id="main_count">
       <ul id="list">
         <li>
           <img src="{% static 'css/images/purple_ico.png' %}">
@@ -40,35 +41,47 @@
         <li>
           <img src="{% static 'css/images/red_ico.png' %}">
         </li>
-        <li class="tags"><strong style="margin-right: 20px">{{deaths}}</strong></li>
+        <li class="tags"><strong>{{deaths}}</strong></li>
+        <li style="margin-left: 10px">
+          <img src="{% static 'css/images/blue_green_ico.png' %}">
+        </li>
+        <li class="tags"><strong>{{rate}}</strong></li>
         <li>
           <img src="{% static 'css/images/brown_ico.png' %}">
         </li>
         <li class="tags"><strong style="margin-left: 23px">{{migrated}}</strong></li>
       </ul>
+
+    <div class="search">
+      <input type="text" id="search_input" placeholder="Search your state...">
+      <button onclick="scrollWin()"><img src="{% static 'css/images/src.png' %}" id="src"></button>
+    </div>
+
+    <div align="center" style="  margin-bottom: 70px;">
+      <p style="color: red;" id="tag_war"></p>
     </div>
 
     <div class="container" align="center">
-      <p class="state-name"><a href="andhrapradesh">Andhra Pradesh</a></p>
-      <hr id="line">
-      <p class="state-name"><a href="delhi">Delhi</a></p>
-      <hr id="line">
-      <p class="state-name"><a href="karnataka">Karnataka</a></p>
-      <hr id="line">
-      <p class="state-name"><a href="kerala">Kerala</a></p>
-      <hr id="line">
-      <p class="state-name"><a href="maharashtra">Maharashtra</a></p>
-      <hr id="line">
-      <p class="state-name"><a href="punjab">Punjab</a></p>
-      <hr id="line">
-      <p class="state-name"><a href="tamilnadu">Tamil Nadu</a></p>
-      <hr id="line">
-      <p class="state-name"><a href="telangana">Telangana</a></p>
-      <hr id="line">
-      <p class="state-name"><a href="uttarpradesh">Uttar Pradesh</a></p>
-      <hr id="line">
-      <p class="state-name"><a href="westbengal">West Bengal</a></p>
-      <hr id="line">
+      <p class="state-name" id="ap"><a href="andhrapradesh">Andhra Pradesh</a></p>
+      <hr class="line" id="line_ap">
+      <p class="state-name" id="del"><a href="delhi">Delhi</a></p>
+      <hr class="line" id="line_del">
+      <p class="state-name" id="kar"><a href="karnataka">Karnataka</a></p>
+      <hr class="line" id="line_kar">
+      <p class="state-name" id="ker"><a href="kerala">Kerala</a></p>
+      <hr class="line" id="line_ker">
+      <p class="state-name" id="mah"><a href="maharashtra">Maharashtra</a></p>
+      <hr class="line" id="line_mah">
+      <p class="state-name" id="pb"><a href="punjab">Punjab</a></p>
+      <hr class="line" id="line_pb">
+      <p class="state-name" id="tn"><a href="tamilnadu">Tamil Nadu</a></p>
+      <hr class="line" id="line_tn">
+      <p class="state-name" id="tel"><a href="telangana">Telangana</a></p>
+      <hr class="line" id="line_tel">
+      <p class="state-name" id="up"><a href="uttarpradesh">Uttar Pradesh</a></p>
+      <hr class="line" id="line_up">
+      <p class="state-name" id="wb"><a href="westbengal">West Bengal</a></p>
+      <hr class="line" id="line_wb">
     </div>
   </body>
 </html>
