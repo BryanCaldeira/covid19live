@@ -23,16 +23,18 @@ def Main(requests):
 		deaths=int(content[2])
 		migrated=int(content[3])
 		confirmed = active+cured+deaths+migrated
+		rate = str(round((deaths/confirmed*100),2))+'%'
 
 	except:
-		confirmed='N/A'
-		active='N/A'
-		cured ='N/A'
-		deaths='N/A'
+		confirmed=' N/A '
+		active=' N/A '
+		cured =' N/A '
+		deaths=' N/A '
 		migrated='N/A'
+		rate=' N/A '
 
 
-	return render(requests,'index.html',{'confirmed':confirmed, 'active':active, 'cured':cured, 'deaths':deaths, 'migrated':migrated})
+	return render(requests,'index.html',{'confirmed':confirmed, 'active':active, 'cured':cured, 'deaths':deaths, 'migrated':migrated, 'rate':rate})
 
 
 def Karnataka(requests):
