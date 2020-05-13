@@ -146,6 +146,9 @@ button{
 
 
 @media(max-device-width: 500px){
+  body{
+    height:1650px;
+  }
   #brand_name{
     padding-left: 20px;
     padding-top: 5px;
