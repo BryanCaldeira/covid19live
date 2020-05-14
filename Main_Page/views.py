@@ -240,7 +240,7 @@ def Telangana(requests):
 		content = soup.find_all('tr')
 
 
-		content = content[135].get_text().split()
+		content = content[137].get_text().split()
 
 		conf_cases = content[2]
 		deaths = content[3]
