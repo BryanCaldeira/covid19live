@@ -1,0 +1,86 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>COVID19 LIVE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script type="text/javascript" src="{% static 'JS/match.js' %}"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <p id="brand_name">Covid19 Live</p>
+    </div>
+  </nav class="main">
+
+  <div align="center">
+    <img id="india" src="{% static 'css/images/india.png' %}">
+    <p><strong id="tot">Total</strong></p>
+  </div>
+
+  <ul id="list">
+    <li>
+      <img src="{% static 'css/images/purple_ico.png' %}">
+    </li>
+    <li class="tags"><strong>{{confirmed}}</strong></li>
+    <li>
+      <img src="{% static 'css/images/blue_ico.png' %}">
+    </li>
+    <li class="tags"><strong>{{active}}</strong></li>
+    <li>
+      <img src="{% static 'css/images/green_ico.png' %}">
+    </li>
+    <li class="tags"><strong>{{cured}}</strong></li>
+    <li>
+      <img src="{% static 'css/images/red_ico.png' %}">
+    </li>
+    <li class="tags"><strong>{{deaths}}</strong></li>
+    <li style="margin-left: 10px">
+      <img src="{% static 'css/images/blue_green_ico.png' %}">
+    </li>
+    <li class="tags"><strong>{{rate}}</strong></li>
+  </ul>
+
+  <div class="search">
+    <input type="text" id="search_input" placeholder="Search your state...">
+    <button onclick="scrollWin()"><img src="{% static 'css/images/src.png' %}" id="srch"></button>
+  </div>
+
+  <div align="center" style="  margin-bottom: 70px;">
+    <p style="color: red;" id="tag_war"></p>
+  </div>
+
+  <div class="container" align="center">
+    <p class="state-name" id="ap"><a href="andhrapradesh">Andhra Pradesh</a></p>
+    <hr class="line" id="line_ap">
+    <p class="state-name" id="del"><a href="delhi">Delhi</a></p>
+    <hr class="line" id="line_del">
+    <p class="state-name" id="kar"><a href="karnataka">Karnataka</a></p>
+    <hr class="line" id="line_kar">
+    <p class="state-name" id="ker"><a href="kerala">Kerala</a></p>
+    <hr class="line" id="line_ker">
+    <p class="state-name" id="mah"><a href="maharashtra">Maharashtra</a></p>
+    <hr class="line" id="line_mah">
+    <p class="state-name" id="pb"><a href="punjab">Punjab</a></p>
+    <hr class="line" id="line_pb">
+    <p class="state-name" id="tn"><a href="tamilnadu">Tamil Nadu</a></p>
+    <hr class="line" id="line_tn">
+    <p class="state-name" id="tel"><a href="telangana">Telangana</a></p>
+    <hr class="line" id="line_tel">
+    <p class="state-name" id="up"><a href="uttarpradesh">Uttar Pradesh</a></p>
+    <hr class="line" id="line_up">
+    <p class="state-name" id="wb"><a href="westbengal">West Bengal</a></p>
+    <hr class="line" id="line_wb">
+  </div>
+</body>
+
+</html>
