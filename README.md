@@ -36,7 +36,12 @@ This application gives you quick updates about the covid19 pandemic situation in
 ### Developer
 <img src="https://img.techpowerup.org/200705/name.gif">
 
-<a href="https://www.instagram.com/bryan.caldeira/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/132px-Instagram_logo_2016.svg.png" width="50" height="50"></a>
+
+<a href="https://www.instagram.com/bryan.caldeira/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/132px-        Instagram_logo_2016.svg.png" width="50" height="50"></a>
+<a href="https://www.linkedin.com/in/bryan-caldeira-447bbb147/"><img src="https://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo.png" width="50" height="50"></a>
+
+
+
 
 ### Hosting
 This application is hosted on Heroku cloud servers on the following link below<br/>
