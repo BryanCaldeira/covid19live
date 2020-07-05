@@ -29,6 +29,7 @@ This application gives you quick updates about the covid19 pandemic situation in
 <img align="left" src="https://img.techpowerup.org/200705/3401.jpg" width="350">
 <img align="left" src="https://img.techpowerup.org/200705/4.jpg" width="350">
 
+\
 * #### Desktop View
 
 ![alt text](https://img.techpowerup.org/200705/5.png)
