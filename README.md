@@ -32,7 +32,7 @@ This application gives you quick updates about the covid19 pandemic situation in
 ![alt text](https://img.techpowerup.org/200705/7.png)
 
 ### Developer
-<img src="https://img.techpowerup.org/200705/aasliibq.gif">
+<img src="https://img.techpowerup.org/200705/name.gif">
 
 ### Hosting
 This application is hosted on Heroku cloud servers on the following link below<br/>
