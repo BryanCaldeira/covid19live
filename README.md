@@ -24,21 +24,24 @@ This application gives you quick updates about the covid19 pandemic situation in
 ### Images
 
 * #### Mobile View
-<img align="center" src="https://img.techpowerup.org/200705/1.jpg" width="300">
-<img align="center" src="https://img.techpowerup.org/200705/2420.jpg" width="300">
-<img align="center" src="https://img.techpowerup.org/200705/3401.jpg" width="300">
-<img align="center" src="https://img.techpowerup.org/200705/4.jpg" width="300">
+<div align="center">
+  <img align="center" src="https://img.techpowerup.org/200705/1.jpg" width="300">
+  <img align="center" src="https://img.techpowerup.org/200705/2420.jpg" width="300">
+  <img align="center" src="https://img.techpowerup.org/200705/3401.jpg" width="300">
+  <img align="center" src="https://img.techpowerup.org/200705/4.jpg" width="300">
+ </div>
 
 * #### Desktop View
 ![alt text](https://img.techpowerup.org/200705/5.png)
 ![alt text](https://img.techpowerup.org/200705/7.png)
 
 ### Developer
+
 <img src="https://img.techpowerup.org/200705/name.gif">
 
 
-<a href="https://www.instagram.com/bryan.caldeira/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/132px-        Instagram_logo_2016.svg.png" width="50px" height="50px"></a>
-<a href="https://www.linkedin.com/in/bryan-caldeira-447bbb147"><img src="https://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo.png" width="50px" height="50px"></a>
+<a href="https://www.instagram.com/bryan.caldeira/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/132px-        Instagram_logo_2016.svg.png" width="20" height="20"></a>
+<a href="https://www.linkedin.com/in/bryan-caldeira-447bbb147"><img src="https://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo.png" width="20" height="20"></a>
 
 
 
