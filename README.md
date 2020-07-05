@@ -25,7 +25,7 @@ This application gives you quick updates about the covid19 pandemic situation in
 
 * #### Mobile View
 
-![alt text](https://img.techpowerup.org/200705/1.jpg)
+![image](https://img.techpowerup.org/200705/1.jpg){:height="24px" width="48px"}
 ![alt text](https://img.techpowerup.org/200705/2420.jpg)
 ![alt text](https://img.techpowerup.org/200705/3401.jpg)
 ![alt text](https://img.techpowerup.org/200705/4.jpg)
