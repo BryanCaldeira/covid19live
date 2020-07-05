@@ -26,9 +26,7 @@ This application gives you quick updates about the covid19 pandemic situation in
 <img align="left" src="https://img.techpowerup.org/200705/1.jpg" width="300">
 <img align="left" src="https://img.techpowerup.org/200705/2420.jpg" width="300">
 <img align="left" src="https://img.techpowerup.org/200705/3401.jpg" width="300">
-<img align="left" src="https://img.techpowerup.org/200705/4.jpg" width="300">
-
-\
+<img align="left" src="https://img.techpowerup.org/200705/4.jpg" width="300"><br/>
 
 ![alt text](https://img.techpowerup.org/200705/5.png)
 ![alt text](https://img.techpowerup.org/200705/7.png)
@@ -36,6 +34,5 @@ This application gives you quick updates about the covid19 pandemic situation in
 
 
 ### Hosting
-This application is hosted on Heroku cloud servers on the following link below
-\
+This application is hosted on Heroku cloud servers on the following link below<br/>
 [covid-19live.herokuapp.com](https://covid-19liveindia.herokuapp.com/)
