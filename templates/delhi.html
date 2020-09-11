@@ -1,0 +1,59 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Delhi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/states.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <p id="brand_name">Covid19 Live</p>
+    </div>
+  </nav>
+  <div class="container" align="center">
+    <p class="state-name">Delhi</p>
+    <img alt="Location map India Delhi EN.svg"
+      src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Location_map_India_Delhi_EN.svg/220px-Location_map_India_Delhi_EN.svg.png"
+      decoding="async"
+      srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Location_map_India_Delhi_EN.svg/330px-Location_map_India_Delhi_EN.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Location_map_India_Delhi_EN.svg/440px-Location_map_India_Delhi_EN.svg.png 2x"
+      data-file-width="768" data-file-height="764" width="220" height="219"></br>
+    <img src="{% static 'css/images/live_icon.gif' %}" style="margin-top: 30px" width="100" height="50">
+    <!--Table containing all counts-->
+    <table>
+      <tr>
+        <td class="lab">Confirmed Cases</td>
+        <td class="val">{{confirmed}}</td>
+      </tr>
+      <tr>
+        <td class="lab">Active Cases</td>
+        <td class="val">{{active}}</td>
+      </tr>
+      <tr>
+        <td class="lab">Recovered</td>
+        <td class="val" style="color: green">{{recovered}}</td>
+      </tr>
+      <tr>
+        <td class="lab">Deaths</td>
+        <td class="val" style="color: red"><strong>{{deaths}}</strong></td>
+      </tr>
+      <tr>
+        <td class="lab">Fatality Rate</td>
+        <td class="val">{{fatality_rate}}</td>
+      </tr>
+    </table>
+    <a id="website"
+      href="https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Delhi">wikipedia.org/wiki/COVID-19_pandemic_in_Delhi</a>
+  </div>
+</body>
+
+</html>

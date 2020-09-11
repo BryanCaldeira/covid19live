@@ -1,0 +1,121 @@
+body {
+  /*body height*/
+  height: 1000px;
+}
+
+
+.navbar {
+  /*navbar styles*/
+  background-color: #FEBA27;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+
+
+#brand_name {
+  /*app logo styles on navbar*/
+  font-family: Retrofunkscript;
+  color: white;
+  font-size: 40px;
+  padding-left: 10px;
+  padding-top: 5px;
+  pointer-events: none;
+}
+
+
+.state-name {
+  /*state name styles*/
+  font-family: VeganStyle;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+table {
+  /*table of contents style*/
+  width: 400px;
+  margin-top: 30px;
+}
+
+
+#website {
+  /*link of website below table*/
+  margin-top: 20px;
+}
+
+
+table,
+td {
+  border: 2px solid #FEBA27;
+  height: 50px;
+}
+
+
+.lab {
+  text-indent: 20px;
+}
+
+
+.val {
+  /*center align table vals*/
+  text-align: center;
+}
+
+
+
+@media(max-width: 1000px) {
+
+  /*adjust to small screens below 1000px width*/
+  #brand_name {
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+
+  #home {
+    float: right;
+  }
+
+}
+
+
+
+
+@media(max-device-width: 500px) {
+
+  /*adjust to mobile screen*/
+  #brand_name {
+    padding-left: 20px;
+    padding-top: 5px;
+    font-size: 35px;
+  }
+
+  #tog_but {
+    margin-top: 10px;
+  }
+
+  .state-name {
+    font-size: 30px;
+  }
+
+  table {
+    width: 90%;
+  }
+
+}
+
+
+/*custom fonts used*/
+@font-face {
+  font-family: Retrofunkscript;
+  src: url('fonts/Retrofunkscript.otf');
+
+}
+
+
+@font-face {
+  font-family: VeganStyle;
+  src: url('fonts/VeganStyle.ttf');
+
+}

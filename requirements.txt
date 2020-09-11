@@ -1,0 +1,12 @@
+asgiref
+certifi
+chardet
+Django
+idna
+pytz
+requests
+soupsieve
+urllib3
+django-heroku
+gunicorn
+simplejson

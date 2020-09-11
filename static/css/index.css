@@ -1,0 +1,209 @@
+ body {
+   height: 2000px;
+   /*body height*/
+ }
+
+ #india {
+   /*India logo on top*/
+   width: 220px;
+   height: 80px;
+ }
+
+
+ .navbar {
+   /*navbar*/
+   width: 100%;
+   background-color: #FEBA27;
+   /*navbar color*/
+ }
+
+
+ #brand_name {
+   /*navbar brand name*/
+   font-family: Retrofunkscript;
+   color: white;
+   /*Color of app logo name*/
+   font-size: 40px;
+   padding-left: 10px;
+   padding-top: 5px;
+   pointer-events: none;
+ }
+
+
+ .line {
+   /*line under state name*/
+   border-style: inset;
+   border-width: 2px;
+   border-color: #E8E8E8;
+   width: 90%;
+ }
+
+
+ .state-name {
+   /*state name styles*/
+   font-family: VeganStyle;
+   /*font from font folder*/
+   font-size: 40px;
+   margin-bottom: 30px;
+ }
+
+
+ img {
+   /*background image of displaying the count*/
+   width: 200px;
+   height: 200px;
+   padding-right: 2px;
+ }
+
+
+ ul {
+   /*unorderd list having the background images*/
+   list-style: none;
+   /*To display a horizontal center alighned list*/
+   text-align: center;
+   margin-left: -60px;
+ }
+
+
+ #list li {
+   /*display list elements in line*/
+   display: inline;
+ }
+
+ .tags {
+   /*text showing the count*/
+   font-size: 32px;
+   margin-right: 50px;
+   margin-left: -169px;
+   color: white;
+   text-shadow: 1px 1px 2px black;
+ }
+
+
+ #tot {
+   /*'Total' text below India logo*/
+   font-family: Arial;
+   font-size: 30px;
+ }
+
+
+ .search {
+   /*search box div*/
+   width: 460px;
+   margin: 50px auto;
+   box-shadow: 0 0 0 2px #FEBA27;
+ }
+
+ #search_input {
+   /*search input field*/
+   height: 40px;
+   width: 400px;
+   text-align: center;
+   text-indent: 40px;
+   outline: none;
+   border: none;
+   font-size: 20px;
+ }
+
+ #srch {
+   /*Search button image*/
+   width: 40px;
+   height: 40px;
+ }
+
+
+ button {
+   /*search button*/
+   background-color: transparent;
+   outline: none;
+   border: none;
+ }
+
+
+ /*Display width size below 1000px*/
+ @media(max-width: 1000px) {
+
+   /*Adjust to tablets and small screens*/
+   #brand_name {
+     padding-left: 20px;
+     padding-top: 5px;
+   }
+
+ }
+
+ /*For Mobile screen view*/
+ @media(max-device-width: 500px) {
+   body {
+     /*Reduce body size for mobile screens*/
+     height: 1650px;
+   }
+
+   #brand_name {
+     /*Reduce brand name for mobile screens*/
+     padding-left: 20px;
+     padding-top: 5px;
+     font-size: 35px;
+   }
+
+   .state-name {
+     /*Reduce state name for mobile screen*/
+     font-size: 30px;
+     margin-bottom: 20px;
+   }
+
+   .tags {
+     /*Reduce count digits size for mobile screen*/
+     font-size: 22px;
+     margin-right: 40px;
+     margin-left: -120px;
+   }
+
+   ul {
+     /*adjust unordered list to -40px left holding the images for screen fit*/
+     margin-left: -40px;
+   }
+
+   img {
+     /*reduce image size of count image from 200->150px for better fit*/
+     width: 150px;
+     height: 150px;
+   }
+
+   #india {
+     /*Reduce India logo size for better fit*/
+     width: 130px;
+     height: 50px;
+   }
+
+   #search_input {
+     /*reduce search input field size for better fit*/
+     width: 82%;
+     text-align: left;
+     text-indent: 10px;
+   }
+
+   .search {
+     /*reduce search div size for better fit*/
+     width: 90%;
+   }
+
+
+ }
+
+
+ /*Custom font used from font dir*/
+ @font-face {
+   /*Custom font used for COVID-19 logo on the navbar*/
+   font-family: Retrofunkscript;
+   src: url('fonts/Retrofunkscript.otf');
+
+ }
+
+
+ /*Custom font used from font dir*/
+ @font-face {
+   /*Custom font used on the states text*/
+   font-family: VeganStyle;
+   src: url('fonts/VeganStyle.ttf');
+
+ }
