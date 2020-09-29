@@ -7,14 +7,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-
 SECRET_KEY = 'q*7(i9h@*2$stjcyb_cpjwvm%pmp0nx^2dfve%tirp18*xl71e'
-
 
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.43.190','127.0.0.1']
+ALLOWED_HOSTS = ['192.168.43.190', '127.0.0.1', '0.0.0.0']
 
 
 INSTALLED_APPS = [
@@ -23,8 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'Main_Page'
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
@@ -59,16 +56,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'covid19live.wsgi.application'
 
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -85,8 +72,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -98,13 +83,8 @@ USE_L10N = True
 USE_TZ = True
 
 
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
 STATIC_URL = '/static/'
 
-
 STATICFILES_DIRS = (
-    (os.path.join(BASE_DIR,'static')),
+    (os.path.join(BASE_DIR, 'static')),
 )

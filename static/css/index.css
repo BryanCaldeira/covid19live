@@ -1,6 +1,11 @@
  body {
    height: 2000px;
    /*body height*/
+   font-family: Roboto;
+ }
+
+ a {
+   color: #007bff !important;
  }
 
  #india {
@@ -11,21 +16,24 @@
 
 
  .navbar {
-   /*navbar*/
-   width: 100%;
+   /*navbar styles*/
    background-color: #FEBA27;
-   /*navbar color*/
+   position: fixed;
+   width: 100%;
+   height: 80px;
+   top: 0;
+   left: 0;
+   z-index: 999;
  }
 
 
  #brand_name {
-   /*navbar brand name*/
+   /*app logo styles on navbar*/
    font-family: Retrofunkscript;
    color: white;
-   /*Color of app logo name*/
    font-size: 40px;
    padding-left: 10px;
-   padding-top: 5px;
+   margin-top: 10px;
    pointer-events: none;
  }
 
@@ -55,27 +63,23 @@
    padding-right: 2px;
  }
 
-
  ul {
-   /*unorderd list having the background images*/
-   list-style: none;
-   /*To display a horizontal center alighned list*/
+   list-style-type: none;
    text-align: center;
-   margin-left: -60px;
+ }
+
+ li {
+   display: inline-block;
  }
 
 
- #list li {
-   /*display list elements in line*/
-   display: inline;
- }
 
- .tags {
-   /*text showing the count*/
-   font-size: 32px;
-   margin-right: 50px;
-   margin-left: -169px;
+ li>div>p {
+   position: absolute;
+   margin-top: -130px;
+   margin-left: 50px;
    color: white;
+   font-size: 25px;
    text-shadow: 1px 1px 2px black;
  }
 
@@ -89,8 +93,9 @@
 
  .search {
    /*search box div*/
-   width: 460px;
+   width: 470px;
    margin: 50px auto;
+   padding: 0 !important;
    box-shadow: 0 0 0 2px #FEBA27;
  }
 
@@ -107,8 +112,10 @@
 
  #srch {
    /*Search button image*/
-   width: 40px;
-   height: 40px;
+   margin-top: 10px;
+   width: 30px;
+   height: 30px;
+   outline: none;
  }
 
 
@@ -138,10 +145,10 @@
      height: 1650px;
    }
 
+   /*adjust to mobile screen*/
    #brand_name {
-     /*Reduce brand name for mobile screens*/
+     margin-top: 25px;
      padding-left: 20px;
-     padding-top: 5px;
      font-size: 35px;
    }
 

@@ -1,19 +1,38 @@
 from django.contrib import admin
 from django.urls import path
-from Main_Page import views
+from covid19live import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.Main , name="main"),
+    path('', views.Main, name="main"),
     path('andhrapradesh/', views.Main),
-    path('karnataka/', views.Main),
-    path('tamilnadu/', views.Main),
-    path('kerala/', views.Main),
-    path('maharashtra/', views.Main),
-    path('telangana/', views.Main),
+    path('arunachalpradesh/', views.Main),
+    path('assam/', views.Main),
+    path('bihar/', views.Main),
+    path('chattisgarh/', views.Main),
     path('delhi/', views.Main),
-    path('uttarpradesh/', views.Main),
+    path('goa/', views.Main),
+    path('gujarat/', views.Main),
+    path('haryana/', views.Main),
+    path('himachalpradesh/', views.Main),
+    path('jammu&kashmir/', views.Main),
+    path('jharkhand/', views.Main),
+    path('karnataka/', views.Main),
+    path('kerala/', views.Main),
+    path('madhyapradesh/', views.Main),
+    path('maharashtra/', views.Main),
+    path('manipur/', views.Main),
+    path('meghalaya/', views.Main),
+    path('mizoram/', views.Main),
+    path('nagaland/', views.Main),
+    path('orissa/', views.Main),
     path('punjab/', views.Main),
+    path('rajasthan/', views.Main),
+    path('sikkim/', views.Main),
+    path('tamilnadu/', views.Main),
+    path('telangana/', views.Main),
+    path('tripura/', views.Main),
+    path('uttarakhand/', views.Main),
+    path('uttarpradesh/', views.Main),
     path('westbengal/', views.Main),
-
 ]

@@ -7,12 +7,12 @@
 <head>
   <meta charset="utf-8">
   <title>COVID19 LIVE</title>
+  <meta name="theme-color" content="#8C81D3">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script type="text/javascript" src="{% static 'JS/match.js' %}"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -22,33 +22,49 @@
     </div>
   </nav class="main">
 
-  <div align="center">
+  <div align="center" style="margin-top: 120px">
     <img id="india" src="{% static 'css/images/india.png' %}">
     <p><strong id="tot">Total</strong></p>
   </div>
 
-  <ul id="list">
+  <ul>
     <li>
-      <img src="{% static 'css/images/purple_ico.png' %}">
+      <div>
+        <img src="{% static 'css/images/purple_ico.png' %}">
+        <p><strong>{{confirmed}}</strong></p>
+      </div>
     </li>
-    <li class="tags"><strong>{{confirmed}}</strong></li>
-    <li style="margin-left: -25px">
-      <img src="{% static 'css/images/blue_ico.png' %}">
-    </li>
-    <li class="tags"><strong>{{active}}</strong></li>
+
     <li>
-      <img src="{% static 'css/images/green_ico.png' %}">
+      <div>
+        <img src="{% static 'css/images/blue_ico.png' %}">
+        <p><strong>{{active}}</strong></p>
+      </div>
     </li>
-    <li class="tags"><strong>{{recovered}}</strong></li>
-    <li style="margin-left: -25px">
-      <img src="{% static 'css/images/red_ico.png' %}">
+
+    <li>
+      <div>
+        <img src="{% static 'css/images/green_ico.png' %}">
+        <p><strong>{{recovered}}</strong></p>
+      </div>
     </li>
-    <li class="tags"><strong>{{deaths}}</strong></li>
-    <li style="margin-left: 10px">
-      <img src="{% static 'css/images/blue_green_ico.png' %}">
+
+    <li>
+      <div>
+        <img src="{% static 'css/images/red_ico.png' %}">
+        <p><strong>{{deaths}}</strong></p>
+      </div>
     </li>
-    <li class="tags"><strong>{{fatality_rate}}</strong></li>
+
+    <li>
+      <div>
+        <img src="{% static 'css/images/blue_green_ico.png' %}">
+        <p><strong>{{fatality_rate}}</strong></p>
+      </div>
+    </li>
+
   </ul>
+
 
   <div class="search">
     <input type="text" id="search_input" placeholder="Search your state...">
@@ -62,25 +78,66 @@
   <div class="container" align="center">
     <p class="state-name" id="ap"><a href="andhrapradesh">Andhra Pradesh</a></p>
     <hr class="line" id="line_ap">
-    <p class="state-name" id="del"><a href="delhi">Delhi</a></p>
-    <hr class="line" id="line_del">
-    <p class="state-name" id="kar"><a href="karnataka">Karnataka</a></p>
-    <hr class="line" id="line_kar">
-    <p class="state-name" id="ker"><a href="kerala">Kerala</a></p>
-    <hr class="line" id="line_ker">
-    <p class="state-name" id="mah"><a href="maharashtra">Maharashtra</a></p>
-    <hr class="line" id="line_mah">
+    <p class="state-name" id="ar"><a href="arunachalpradesh">Arunachal Pradesh</a></p>
+    <hr class="line" id="line_ar">
+    <p class="state-name" id="as"><a href="assam">Assam</a></p>
+    <hr class="line" id="line_as">
+    <p class="state-name" id="br"><a href="bihar">Bihar</a></p>
+    <hr class="line" id="line_br">
+    <p class="state-name" id="cg"><a href="chattisgarh">Chattisgarh</a></p>
+    <hr class="line" id="line_cg">
+    <p class="state-name" id="dl"><a href="delhi">Delhi</a></p>
+    <hr class="line" id="line_dl">
+    <p class="state-name" id="ga"><a href="goa">Goa</a></p>
+    <hr class="line" id="line_ga">
+    <p class="state-name" id="gj"><a href="gujarat">Gujarat</a></p>
+    <hr class="line" id="line_gj">
+    <p class="state-name" id="hr"><a href="haryana">Haryana</a></p>
+    <hr class="line" id="line_hr">
+    <p class="state-name" id="hp"><a href="himachalpradesh">Himachal Pradesh</a></p>
+    <hr class="line" id="line_hp">
+    <p class="state-name" id="jk"><a href="jammu&kashmir">Jammu & Kashmir</a></p>
+    <hr class="line" id="line_jk">
+    <p class="state-name" id="js"><a href="jharkhand">Jharkhand</a></p>
+    <hr class="line" id="line_js">
+    <p class="state-name" id="ka"><a href="karnataka">Karnataka</a></p>
+    <hr class="line" id="line_ka">
+    <p class="state-name" id="kl"><a href="kerala">Kerala</a></p>
+    <hr class="line" id="line_kl">
+    <p class="state-name" id="mp"><a href="madhyapradesh">Madhya Pradesh</a></p>
+    <hr class="line" id="line_mp">
+    <p class="state-name" id="mh"><a href="maharashtra">Maharashtra</a></p>
+    <hr class="line" id="line_mh">
+    <p class="state-name" id="mn"><a href="manipur">Manipur</a></p>
+    <hr class="line" id="line_mn">
+    <p class="state-name" id="ml"><a href="meghalaya">Meghalaya</a></p>
+    <hr class="line" id="line_ml">
+    <p class="state-name" id="mz"><a href="mizoram">Mizoram</a></p>
+    <hr class="line" id="line_mz">
+    <p class="state-name" id="nl"><a href="nagaland">Nagaland</a></p>
+    <hr class="line" id="line_nl">
+    <p class="state-name" id="or"><a href="orissa">Orissa</a></p>
+    <hr class="line" id="line_or">
     <p class="state-name" id="pb"><a href="punjab">Punjab</a></p>
     <hr class="line" id="line_pb">
+    <p class="state-name" id="rj"><a href="rajasthan">Rajasthan</a></p>
+    <hr class="line" id="line_rj">
+    <p class="state-name" id="sk"><a href="sikkim">Sikkim</a></p>
+    <hr class="line" id="line_sk">
     <p class="state-name" id="tn"><a href="tamilnadu">Tamil Nadu</a></p>
     <hr class="line" id="line_tn">
-    <p class="state-name" id="tel"><a href="telangana">Telangana</a></p>
-    <hr class="line" id="line_tel">
+    <p class="state-name" id="ts"><a href="telangana">Telangana</a></p>
+    <hr class="line" id="line_ts">
+    <p class="state-name" id="tr"><a href="tripura">Tripura</a></p>
+    <hr class="line" id="line_tr">
+    <p class="state-name" id="uk"><a href="uttarakhand">Uttarakhand</a></p>
+    <hr class="line" id="line_uk">
     <p class="state-name" id="up"><a href="uttarpradesh">Uttar Pradesh</a></p>
     <hr class="line" id="line_up">
     <p class="state-name" id="wb"><a href="westbengal">West Bengal</a></p>
     <hr class="line" id="line_wb">
   </div>
+
 </body>
 
 </html>

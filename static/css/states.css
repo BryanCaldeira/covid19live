@@ -8,9 +8,11 @@ body {
   /*navbar styles*/
   background-color: #FEBA27;
   position: fixed;
+  width: 100%;
+  height: 80px;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 999;
 }
 
 
@@ -21,8 +23,12 @@ body {
   color: white;
   font-size: 40px;
   padding-left: 10px;
-  padding-top: 5px;
+  margin-top: 10px;
   pointer-events: none;
+}
+
+.container{
+  margin-top: 150px;
 }
 
 
@@ -43,12 +49,15 @@ table {
 #website {
   /*link of website below table*/
   margin-top: 20px;
+  display: block;
+  font-family: Roboto;
 }
 
 
 table,
 td {
   border: 2px solid #FEBA27;
+  border-collapse: collapse;
   height: 50px;
 }
 
@@ -70,7 +79,6 @@ td {
   /*adjust to small screens below 1000px width*/
   #brand_name {
     padding-left: 20px;
-    padding-top: 5px;
   }
 
   #home {
@@ -86,8 +94,8 @@ td {
 
   /*adjust to mobile screen*/
   #brand_name {
+    margin-top: 25px;
     padding-left: 20px;
-    padding-top: 5px;
     font-size: 35px;
   }
 
