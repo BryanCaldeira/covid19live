@@ -12,132 +12,350 @@
   <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/loading.css' %}">
   <script type="text/javascript" src="{% static 'JS/match.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="container-fluid">
-      <p id="brand_name">Covid19 Live</p>
+  <div class="container">
+    <div class="loader">
+      <img oncontextmenu="return false" src="{% static 'loading.gif' %}" alt="loading...">
     </div>
-  </nav class="main">
+    <script src="{% static 'JS/loading.js' %}"></script>
 
-  <div align="center" style="margin-top: 120px">
-    <img id="india" src="{% static 'css/images/india.png' %}">
-    <p><strong id="tot">Total</strong></p>
+    <header
+      style="position:  fixed; background-color:  #FEBA27; width: 100%; top: 0; left: 0; height: 70px; z-index: 999;">
+      <p id="bname">Covid19 Live</p>
+      <button onclick="SetDayNight()" id="mode_button">
+        <img id="moon_icon" style="position: absolute; right: 10px;"
+          src="https://img.icons8.com/emoji/96/000000/new-moon-emoji.png" />
+        <img id="sun_icon" style="position: absolute; right: 10px;display: none;"
+          src="https://img.icons8.com/fluent/144/000000/sun.png" />
+      </button>
+    </header>
+
+    <div class="search" style="margin-top: 120px">
+      <i onclick="scrollWin()" id="search_icon" class="fa fa-search" aria-hidden="true"></i>
+      <input type="text" id="search_input" placeholder="" autocomplete="off" name="search">
+      <i onclick="Clear()" style="display: none;" id="close_icon" class="fa fa-times-circle"></i>
+      <ul style="width: 100%; margin-left: 0; font-size: 20px;" class="list-group" id="list"></ul>
+      <script>
+        var j = 0;
+        var places = [
+          'Jharkhand', 'Karnataka', 'Kerala', 'Telangana', 'Manipur', 'Madhya Pradesh', 'Maharashtra', 'Mizoram',
+          'Nagaland', 'Orissa', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Meghalaya', 'Andhra Pradesh',
+          'Uttarakhand', 'Uttar Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chattisgarh', 'Delhi', 'Goa',
+          'Gujarat', 'Haryana', 'Himachal Pradesh', 'Tripura', 'West Bengal'
+        ];
+
+
+        function Clear() {
+          document.getElementById('search_input').value = "";
+          clearList();
+        }
+
+        function CheckInput() {
+          var val = document.getElementById('search_input').value;
+          var close = document.getElementById('close_icon').style;
+          if (val.length != 0) {
+            close.display = "block";
+          } else {
+            close.display = "none";
+          }
+        }
+        setInterval(CheckInput)
+
+        setInterval(() => {
+          if (j < places.length) {
+            let ph = document.getElementById('search_input');
+            ph.placeholder = places[j];
+            j++;
+          } else {
+            j = 0;
+          }
+        }, 2000);
+      </script>
+    </div>
+
+    <div align="center">
+      <img id="india" oncontextmenu="return false" src="{% static 'css/images/india.png' %}">
+      <p><strong id="tot">Total</strong></p>
+    </div>
+
+    <ul>
+      <li>
+        <div style="background-color: #b376ff;">
+          <p><strong>{{confirmed}}</strong></p>
+          <p class="cap">Confirmed</p>
+        </div>
+      </li>
+
+      <li>
+        <div style="background-color: #588FCC;">
+          <p><strong>{{active}}</strong></p>
+          <p class="cap">Active</p>
+        </div>
+      </li>
+
+      <li>
+        <div style="background-color: #80CE5D;">
+          <p><strong>{{recovered}}</strong></p>
+          <p class="cap">Recovered</p>
+        </div>
+      </li>
+
+      <li>
+        <div style="background-color: #DC7181;">
+          <p><strong>{{deaths}}</strong></p>
+          <p class="cap">Deaths</p>
+        </div>
+      </li>
+
+      <li>
+        <div style="background-color: #5FD0A5;">
+          <p><strong>{{fatality_rate}}</strong></p>
+          <p class="cap">Fatality Rate</p>
+        </div>
+      </li>
+
+    </ul>
+
+    <div align="center" style="  margin-bottom: 70px;">
+      <p style="color: red;" id="tag_war"></p>
+    </div>
+
+
+    <div class="row">
+      <div id="col1">
+        <table id="tab" align="right">
+          <tr>
+            <th>State/UT</th>
+          </tr>
+          <script>
+            var names = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chattisgarh', 'Delhi', 'Goa',
+              'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala',
+              'Madhya Pradesh', 'Maharashtra',
+              'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Orissa', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu',
+              'Telangana', 'Tripura', 'Uttarakhand', 'Uttar Pradesh', 'West Bengal'
+            ]
+            for (let i = 0; i < names.length; i++) {
+              let table = document.getElementById('tab');
+              let tr = document.createElement('tr');
+              let td = document.createElement('td');
+              td.innerHTML = names[i];
+              if (i % 2 == 0)
+                td.setAttribute("class", "even_td")
+              else
+                td.setAttribute("class", "odd_td")
+              td.style.textAlign = "left";
+              td.style.marginLeft = "3px";
+              tr.appendChild(td);
+              table.appendChild(tr);
+            }
+          </script>
+        </table>
+      </div>
+
+
+      <div id="col2" align="left">
+        <div id="col2_div">
+          <table id="tab">
+            <tr>
+              <th>Confirmed</th>
+              <th>Active</th>
+              <th>Recovered</th>
+              <th>Deaths</th>
+              <th>Rate</th>
+            </tr>
+            <tr>
+              {% for elem in AP %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in AR %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in AS %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in BR %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in CG %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in DL %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in GA %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in GJ %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in HR %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in HP %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in JS %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in KA %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in KL %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in MP %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in MH %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in MN %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in ML %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in MZ %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in NL %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in OR %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in PB %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in RJ %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in SK %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in TN %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in TS %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in TR %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in UK %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in UP %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in WB %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <a target="_blank" href="https://github.com/BryanCaldeira"><img style="margin-right: 15px;"
+          src="https://img.icons8.com/material-outlined/208/000000/github.png" /></a>
+      <a target="_blank" href="https://api-covidlive.herokuapp.com/"><img style="margin-right: 15px;"
+          src="https://img.icons8.com/ios-filled/100/000000/api.png" /></a>
+    </footer>
+
+    <script src="{% static 'JS/day-night-mode.js' %}"></script>
+    <script src="{% static 'JS/search-auto.js' %}"></script>
   </div>
-
-  <ul>
-    <li>
-      <div>
-        <img src="{% static 'css/images/purple_ico.png' %}">
-        <p><strong>{{confirmed}}</strong></p>
-      </div>
-    </li>
-
-    <li>
-      <div>
-        <img src="{% static 'css/images/blue_ico.png' %}">
-        <p><strong>{{active}}</strong></p>
-      </div>
-    </li>
-
-    <li>
-      <div>
-        <img src="{% static 'css/images/green_ico.png' %}">
-        <p><strong>{{recovered}}</strong></p>
-      </div>
-    </li>
-
-    <li>
-      <div>
-        <img src="{% static 'css/images/red_ico.png' %}">
-        <p><strong>{{deaths}}</strong></p>
-      </div>
-    </li>
-
-    <li>
-      <div>
-        <img src="{% static 'css/images/blue_green_ico.png' %}">
-        <p><strong>{{fatality_rate}}</strong></p>
-      </div>
-    </li>
-
-  </ul>
-
-
-  <div class="search">
-    <input type="text" id="search_input" placeholder="Search your state...">
-    <button onclick="scrollWin()"><img src="{% static 'css/images/src.png' %}" id="srch"></button>
-  </div>
-
-  <div align="center" style="  margin-bottom: 70px;">
-    <p style="color: red;" id="tag_war"></p>
-  </div>
-
-  <div class="container" align="center">
-    <p class="state-name" id="ap"><a href="andhrapradesh">Andhra Pradesh</a></p>
-    <hr class="line" id="line_ap">
-    <p class="state-name" id="ar"><a href="arunachalpradesh">Arunachal Pradesh</a></p>
-    <hr class="line" id="line_ar">
-    <p class="state-name" id="as"><a href="assam">Assam</a></p>
-    <hr class="line" id="line_as">
-    <p class="state-name" id="br"><a href="bihar">Bihar</a></p>
-    <hr class="line" id="line_br">
-    <p class="state-name" id="cg"><a href="chattisgarh">Chattisgarh</a></p>
-    <hr class="line" id="line_cg">
-    <p class="state-name" id="dl"><a href="delhi">Delhi</a></p>
-    <hr class="line" id="line_dl">
-    <p class="state-name" id="ga"><a href="goa">Goa</a></p>
-    <hr class="line" id="line_ga">
-    <p class="state-name" id="gj"><a href="gujarat">Gujarat</a></p>
-    <hr class="line" id="line_gj">
-    <p class="state-name" id="hr"><a href="haryana">Haryana</a></p>
-    <hr class="line" id="line_hr">
-    <p class="state-name" id="hp"><a href="himachalpradesh">Himachal Pradesh</a></p>
-    <hr class="line" id="line_hp">
-    <p class="state-name" id="jk"><a href="jammu&kashmir">Jammu & Kashmir</a></p>
-    <hr class="line" id="line_jk">
-    <p class="state-name" id="js"><a href="jharkhand">Jharkhand</a></p>
-    <hr class="line" id="line_js">
-    <p class="state-name" id="ka"><a href="karnataka">Karnataka</a></p>
-    <hr class="line" id="line_ka">
-    <p class="state-name" id="kl"><a href="kerala">Kerala</a></p>
-    <hr class="line" id="line_kl">
-    <p class="state-name" id="mp"><a href="madhyapradesh">Madhya Pradesh</a></p>
-    <hr class="line" id="line_mp">
-    <p class="state-name" id="mh"><a href="maharashtra">Maharashtra</a></p>
-    <hr class="line" id="line_mh">
-    <p class="state-name" id="mn"><a href="manipur">Manipur</a></p>
-    <hr class="line" id="line_mn">
-    <p class="state-name" id="ml"><a href="meghalaya">Meghalaya</a></p>
-    <hr class="line" id="line_ml">
-    <p class="state-name" id="mz"><a href="mizoram">Mizoram</a></p>
-    <hr class="line" id="line_mz">
-    <p class="state-name" id="nl"><a href="nagaland">Nagaland</a></p>
-    <hr class="line" id="line_nl">
-    <p class="state-name" id="or"><a href="orissa">Orissa</a></p>
-    <hr class="line" id="line_or">
-    <p class="state-name" id="pb"><a href="punjab">Punjab</a></p>
-    <hr class="line" id="line_pb">
-    <p class="state-name" id="rj"><a href="rajasthan">Rajasthan</a></p>
-    <hr class="line" id="line_rj">
-    <p class="state-name" id="sk"><a href="sikkim">Sikkim</a></p>
-    <hr class="line" id="line_sk">
-    <p class="state-name" id="tn"><a href="tamilnadu">Tamil Nadu</a></p>
-    <hr class="line" id="line_tn">
-    <p class="state-name" id="ts"><a href="telangana">Telangana</a></p>
-    <hr class="line" id="line_ts">
-    <p class="state-name" id="tr"><a href="tripura">Tripura</a></p>
-    <hr class="line" id="line_tr">
-    <p class="state-name" id="uk"><a href="uttarakhand">Uttarakhand</a></p>
-    <hr class="line" id="line_uk">
-    <p class="state-name" id="up"><a href="uttarpradesh">Uttar Pradesh</a></p>
-    <hr class="line" id="line_up">
-    <p class="state-name" id="wb"><a href="westbengal">West Bengal</a></p>
-    <hr class="line" id="line_wb">
-  </div>
-
 </body>
 
 </html>

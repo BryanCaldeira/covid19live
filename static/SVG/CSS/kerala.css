@@ -1,0 +1,37 @@
+#g7933,
+#g7976,
+#g7949,
+#g7954,
+#g7944,
+#g7939,
+#g7936,
+#g7976,
+#g8001,
+#g7986,
+#g7981,
+#g7991,
+#g7988,
+#g8006,
+#g7924 {
+    stroke: black;
+    stroke-width: 5px;
+}
+
+#g7991:hover,
+#g7924:hover,
+#g7986:hover,
+#g7988:hover,
+#g7954:hover,
+#g7976:hover,
+#g8001:hover,
+#g7981:hover,
+#g8006:hover,
+#g7949:hover,
+#g7933:hover,
+#g7976:hover,
+#g7944:hover,
+#g7939:hover,
+#g7936:hover {
+    stroke: black !important;
+    stroke-width: 15px !important;
+}

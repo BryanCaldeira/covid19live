@@ -1,216 +1,338 @@
- body {
-   height: 2000px;
-   /*body height*/
-   font-family: Roboto;
- }
+  /*Custom font used from font dir*/
+  @font-face {
+    /*Custom font used for COVID-19 logo on the navbar*/
+    font-family: Retrofunkscript;
+    src: url('fonts/Retrofunkscript.otf');
 
- a {
-   color: #007bff !important;
- }
-
- #india {
-   /*India logo on top*/
-   width: 220px;
-   height: 80px;
- }
+  }
 
 
- .navbar {
-   /*navbar styles*/
-   background-color: #FEBA27;
-   position: fixed;
-   width: 100%;
-   height: 80px;
-   top: 0;
-   left: 0;
-   z-index: 999;
- }
+  /*Custom font used from font dir*/
+  @font-face {
+    /*Custom font used on the states text*/
+    font-family: VeganStyle;
+    src: url('fonts/VeganStyle.ttf');
+
+  }
+
+  table {
+    font-family: Roboto;
+  }
 
 
- #brand_name {
-   /*app logo styles on navbar*/
-   font-family: Retrofunkscript;
-   color: white;
-   font-size: 40px;
-   padding-left: 10px;
-   margin-top: 10px;
-   pointer-events: none;
- }
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #8C81D3;
+    opacity: 1;
+    /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #8C81D3;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #8C81D3;
+  }
+
+  body {
+    height: 2000px;
+    /*body height*/
+    font-family: Roboto;
+  }
 
 
- .line {
-   /*line under state name*/
-   border-style: inset;
-   border-width: 2px;
-   border-color: #E8E8E8;
-   width: 90%;
- }
+  a {
+    color: #007bff !important;
+  }
 
 
- .state-name {
-   /*state name styles*/
-   font-family: VeganStyle;
-   /*font from font folder*/
-   font-size: 40px;
-   margin-bottom: 30px;
- }
+  #bname {
+    /*app logo styles on navbar*/
+    font-family: Retrofunkscript;
+    color: white;
+    font-size: 40px;
+    padding-left: 10px;
+    margin-top: 10px;
+    pointer-events: none;
+  }
+
+  #mode_button {
+    position: fixed;
+    top: 15px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  #mode_button>img {
+    width: 40px;
+    height: 40px;
+  }
 
 
- img {
-   /*background image of displaying the count*/
-   width: 200px;
-   height: 200px;
-   padding-right: 2px;
- }
-
- ul {
-   list-style-type: none;
-   text-align: center;
- }
-
- li {
-   display: inline-block;
- }
+  .line {
+    /*line under state name*/
+    border-style: inset;
+    border-width: 2px;
+    border-color: #E8E8E8;
+    width: 90%;
+  }
 
 
-
- li>div>p {
-   position: absolute;
-   margin-top: -130px;
-   margin-left: 50px;
-   color: white;
-   font-size: 25px;
-   text-shadow: 1px 1px 2px black;
- }
+  .state-name {
+    /*state name styles*/
+    font-family: VeganStyle;
+    /*font from font folder*/
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
 
 
- #tot {
-   /*'Total' text below India logo*/
-   font-family: Arial;
-   font-size: 30px;
- }
+  ul {
+    list-style-type: none;
+    text-align: center;
+    margin-left: -40px;
+  }
+
+  li {
+    display: inline-block;
+    border: 10px solid white;
+  }
 
 
- .search {
-   /*search box div*/
-   width: 470px;
-   margin: 50px auto;
-   padding: 0 !important;
-   box-shadow: 0 0 0 2px #FEBA27;
- }
+  li>div {
+    width: 150px;
+    height: 150px;
+    background-color: #007bff;
+    border-radius: 50px;
+  }
 
- #search_input {
-   /*search input field*/
-   height: 40px;
-   width: 400px;
-   text-align: center;
-   text-indent: 40px;
-   outline: none;
-   border: none;
-   font-size: 20px;
- }
+  li>div>p {
+    padding-top: 50px;
+    font-size: 30px;
+  }
 
- #srch {
-   /*Search button image*/
-   margin-top: 10px;
-   width: 30px;
-   height: 30px;
-   outline: none;
- }
+  .cap {
+    margin-top: -50px;
+    font-size: 15px;
+  }
+
+  #col1 {
+    width: 50%;
+  }
+
+  #col2 {
+    width: 50%;
+  }
 
 
- button {
-   /*search button*/
-   background-color: transparent;
-   outline: none;
-   border: none;
- }
+  #tot {
+    /*'Total' text below India logo*/
+    font-family: Arial;
+    font-size: 30px;
+  }
 
 
- /*Display width size below 1000px*/
- @media(max-width: 1000px) {
+  .search {
+    /*search box div*/
+    width: 400px;
+    margin: 50px auto;
+    padding: 0 !important;
+    box-shadow: 0 0 4px 2px #FEBA27;
+    border-collapse: collapse;
+    border-radius: 5px;
+  }
 
-   /*Adjust to tablets and small screens*/
-   #brand_name {
-     padding-left: 20px;
-     padding-top: 5px;
-   }
+  #search_icon {
+    font-size: 30px;
+    color: black;
+    float: left;
+    margin-left: 15px;
+    margin-top: 13px;
+  }
 
- }
+  #close_icon {
+    font-size: 25px;
+    color: black;
+    margin-top: 17px;
+    float: right;
+    margin-right: 10px;
+  }
 
- /*For Mobile screen view*/
- @media(max-device-width: 500px) {
-   body {
-     /*Reduce body size for mobile screens*/
-     height: 1650px;
-   }
-
-   /*adjust to mobile screen*/
-   #brand_name {
-     margin-top: 25px;
-     padding-left: 20px;
-     font-size: 35px;
-   }
-
-   .state-name {
-     /*Reduce state name for mobile screen*/
-     font-size: 30px;
-     margin-bottom: 20px;
-   }
-
-   .tags {
-     /*Reduce count digits size for mobile screen*/
-     font-size: 22px;
-     margin-right: 40px;
-     margin-left: -120px;
-   }
-
-   ul {
-     /*adjust unordered list to -40px left holding the images for screen fit*/
-     margin-left: -40px;
-   }
-
-   img {
-     /*reduce image size of count image from 200->150px for better fit*/
-     width: 150px;
-     height: 150px;
-   }
-
-   #india {
-     /*Reduce India logo size for better fit*/
-     width: 130px;
-     height: 50px;
-   }
-
-   #search_input {
-     /*reduce search input field size for better fit*/
-     width: 82%;
-     text-align: left;
-     text-indent: 10px;
-   }
-
-   .search {
-     /*reduce search div size for better fit*/
-     width: 90%;
-   }
+  #search_input {
+    /*search input field*/
+    height: 60px;
+    width: 270px;
+    text-indent: 30px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+  }
 
 
- }
+  td,
+  th {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 10px solid white;
+    border-radius: 70px;
+    text-align: center;
+  }
+
+  td {
+    font-weight: 600;
+  }
 
 
- /*Custom font used from font dir*/
- @font-face {
-   /*Custom font used for COVID-19 logo on the navbar*/
-   font-family: Retrofunkscript;
-   src: url('fonts/Retrofunkscript.otf');
 
- }
+  tr:nth-child(even) {
+    background-color: #ffd987;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #ffcd62;
+  }
+
+  th {
+    background-color: #ffc445;
+  }
 
 
- /*Custom font used from font dir*/
- @font-face {
-   /*Custom font used on the states text*/
-   font-family: VeganStyle;
-   src: url('fonts/VeganStyle.ttf');
+  footer {
+    width: 100%;
+    height: 80px;
+    background-color: #ffc445;
+    text-align: center;
+  }
 
- }
+  footer>a>img {
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+
+  #list>li>a {
+    color: rgb(255, 24, 63) !important;
+    font-family: Roboto !important;
+  }
+
+
+
+  /*For Mobile screen view*/
+  @media(max-device-width: 500px) {
+    body {
+      /*Reduce body size for mobile screens*/
+      height: 1650px;
+    }
+
+    li>div {
+      width: 100px;
+      height: 100px;
+      border-radius: 27px;
+    }
+
+    li>div>p {
+      padding-top: 37px;
+      font-size: 20px;
+    }
+
+    .cap {
+      margin-top: -55px;
+    }
+
+    /*adjust to mobile screen*/
+    #brand_name {
+      margin-top: 25px;
+      padding-left: 20px;
+      font-size: 35px;
+    }
+
+    .state-name {
+      /*Reduce state name for mobile screen*/
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    #india {
+      /*Reduce India logo size for better fit*/
+      width: 130px;
+      height: 50px;
+    }
+
+    #search_input {
+      /*reduce search input field size for better fit*/
+      width: 70%;
+      text-align: left;
+      text-indent: 10px;
+    }
+
+    .search {
+      /*reduce search div size for better fit*/
+      width: 90%;
+    }
+
+    #col2_div {
+      overflow-x: scroll;
+    }
+
+
+  }
+
+  @media(min-width:1000px) {
+    #col1 {
+      width: 36%;
+    }
+
+    #col2 {
+      width: 64%;
+    }
+  }
+
+  @media(max-width:390px) {
+    #col1 {
+      width: 70%;
+    }
+
+    #col2 {
+      width: 30%;
+    }
+  }
+
+
+
+  .ls_dark {
+    background-color: rgb(45, 45, 56) !important;
+  }
+
+
+  .search_input_night {
+    background-color: rgb(45, 45, 56);
+    color: #E8E8E8 !important;
+  }
+
+  .tdthli_night {
+    border: 10px solid rgb(38, 38, 47) !important;
+  }
+
+  .body_night {
+    background-color: rgb(38, 38, 47) !important;
+  }
+
+  .search_close_night {
+    color: #8C81D3 !important;
+  }
+
+  .tot_night {
+    color: #E8E8E8 !important;
+  }
+
+  .loader_night {
+    background-color: rgb(38, 38, 47) !important;
+  }

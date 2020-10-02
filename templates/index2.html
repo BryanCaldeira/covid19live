@@ -11,49 +11,85 @@
   <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{% static 'css/states.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="container-fluid">
-      <p id="brand_name">Covid19 Live</p>
+  <div class="container">
+    <header
+      style="position:  fixed; background-color:  #FEBA27; width: 100%; top: 0; left: 0; height: 70px; z-index: 999;">
+      <p id="bname">Covid19 Live</p>
+    </header>
+    <div class="container" align="center">
+      <p class="state-name">{{state | title}}</p>
+      <div id="img"></div>
+      <p id="dist"></p>
     </div>
-  </nav>
-  <div class="container" align="center">
-    <p class="state-name">{{state | title}}</p>
-    <div id="img"></div>
-    <script>
-      let content = '{{img}}'.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&quot;", "\"")
-      document.getElementById('img').innerHTML = content
-      console.log(content)
-    </script>
-    <br>
-    <img src="{% static 'css/images/live_icon.gif' %}" style="margin-top: 30px" width="100" height="50">
-    <!--Table containing all counts-->
-    <table style="font-family: Roboto">
-      <tr>
-        <td class="lab">Confirmed Cases</td>
-        <td class="val">{{confirmed}}</td>
-      </tr>
-      <tr>
-        <td class="lab">Active Cases</td>
-        <td class="val">{{active}}</td>
-      </tr>
-      <tr>
-        <td class="lab">Recovered</td>
-        <td class="val" style="color: green">{{recovered}}</td>
-      </tr>
-      <tr>
-        <td class="lab">Deaths</td>
-        <td class="val" style="color: red"><strong>{{deaths}}</strong></td>
-      </tr>
-      <tr>
-        <td class="lab">Fatality Rate</td>
-        <td class="val">{{fatality_rate}}</td>
-      </tr>
-    </table>
+
+
+
+    <div class="row" align="center">
+      {% if SVG == "KL" %}
+      <div class="col-lg-6">
+        <object id="kerala-svg" data="{% static 'SVG/kerala.svg' %}" type="image/svg+xml">
+        </object>
+        <p id="map-tag" style="text-align: center;">*Map based on number of Deaths</p>
+      </div>
+      <style>
+        object {
+          margin-top: -100px;
+          width: 500px;
+          height: 700px;
+        }
+
+        @media(max-device-width: 600px) {
+          object {
+            width: 100%;
+          }
+        }
+      </style>
+      <script src="{% static 'SVG/JS/kerala.js' %}"></script>
+      {% endif %}
+
+      <script>
+        let content = '{{img}}'.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&quot;", "\"")
+        document.getElementById('img').innerHTML = content
+      </script>
+      <br>
+
+      <!--Table containing all counts-->
+      {% if SVG != "" %}
+      <div class="col-lg-6">
+        {% endif %}
+        <table style="font-family: Roboto; margin-left: auto;margin-right: auto;">
+          <tr>
+            <td class="lab">Confirmed Cases</td>
+            <td class="val">{{confirmed}}</td>
+          </tr>
+          <tr>
+            <td class="lab">Active Cases</td>
+            <td class="val">{{active}}</td>
+          </tr>
+          <tr>
+            <td class="lab">Recovered</td>
+            <td style="color: rgb(6, 211, 6); text-align: center;">{{recovered}}</td>
+          </tr>
+          <tr>
+            <td class="lab">Deaths</td>
+            <td style="color: red; text-align: center;"><strong>{{deaths}}</strong></td>
+          </tr>
+          <tr>
+            <td class="lab">Fatality Rate</td>
+            <td class="val">{{fatality_rate}}</td>
+          </tr>
+        </table>
+        {% if SVG != "" %}
+      </div>
+      {% endif %}
+    </div>
   </div>
+  <script src="{% static 'JS/dn-ind2.js' %}"></script>
 </body>
 
 </html>

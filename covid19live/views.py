@@ -6,10 +6,15 @@ import json
 def Main(requests):
     path = (requests.path).strip('/')
     page = 'index2.html'
-    img = ''
+    img = allData = SVG = ''
 
     if path == "":
         URL = "https://api-covidlive.herokuapp.com/SS"
+        URL2 = "https://api-covidlive.herokuapp.com/all-data"
+        response2 = req.get(URL2)
+        allData = response2.text
+        allData = json.loads(allData)
+
         page = 'index.html'
 
     elif path == "andhrapradesh":
@@ -66,7 +71,7 @@ def Main(requests):
 
     elif path == "kerala":
         URL = "https://api-covidlive.herokuapp.com/KL"
-        img = '<img alt="Kerala-Covid-19-Total-Cases-Map.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Kerala-Covid-19-Total-Cases-Map.svg/220px-Kerala-Covid-19-Total-Cases-Map.svg.png" decoding="async" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Kerala-Covid-19-Total-Cases-Map.svg/330px-Kerala-Covid-19-Total-Cases-Map.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/99/Kerala-Covid-19-Total-Cases-Map.svg/440px-Kerala-Covid-19-Total-Cases-Map.svg.png 2x" data-file-width="1429" data-file-height="2500" width="220" height="385">'
+        SVG = "KL"
 
     elif path == "madhyapradesh":
         URL = "https://api-covidlive.herokuapp.com/MP"
@@ -136,6 +141,18 @@ def Main(requests):
     data = response.text
     data = json.loads(data)
     data.update({"img": img})
+    data.update({"SVG": SVG})
+
+    if path == "":
+        stateCodes = ['AP', 'AR', 'AS', 'BR', 'CG', 'DL', 'GA', 'GJ', 'HR', 'HP', 'JK', 'JS', 'KA',
+                      'KL', 'MP', 'MH', 'MN', 'ML', 'MZ', 'NL', 'OR', 'PB', 'RJ', 'SK', 'TN', 'TS', 'TR', 'UK', 'UP', 'WB']
+
+        data.update({"codes": stateCodes})
+        for elem in stateCodes:
+            lst = [allData[elem]["confirmed"], allData[elem]["active"], allData[elem]
+                   ["recovered"], allData[elem]["deaths"], allData[elem]["fatality_rate"]]
+            print(lst)
+            data.update({elem: lst})
 
     # return the rendered page
     return render(requests, page, data)
