@@ -135,9 +135,9 @@
           </tr>
           <script>
             var names = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chattisgarh', 'Delhi', 'Goa',
-              'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala',
+              'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jammu & Kashmir', 'Jharkhand', 'Karnataka', 'Kerala',
               'Madhya Pradesh', 'Maharashtra',
-              'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Orissa', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu',
+              'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu',
               'Telangana', 'Tripura', 'Uttarakhand', 'Uttar Pradesh', 'West Bengal'
             ]
             for (let i = 0; i < names.length; i++) {
@@ -164,9 +164,9 @@
           <table id="tab">
             <tr>
               <th>Confirmed</th>
-              <th>Active</th>
               <th>Recovered</th>
-              <th>Deaths</th>
+              <th>Deceased</th>
+              <th>tested</th>
               <th>Rate</th>
             </tr>
             <tr>
@@ -194,7 +194,7 @@
             </tr>
 
             <tr>
-              {% for elem in CG %}
+              {% for elem in CH%}
               <td>{{elem}}</td>
               {% endfor %}
             </tr>
@@ -230,7 +230,13 @@
             </tr>
 
             <tr>
-              {% for elem in JS %}
+              {% for elem in JK %}
+              <td>{{elem}}</td>
+              {% endfor %}
+            </tr>
+
+            <tr>
+              {% for elem in JH %}
               <td>{{elem}}</td>
               {% endfor %}
             </tr>
@@ -314,7 +320,7 @@
             </tr>
 
             <tr>
-              {% for elem in TS %}
+              {% for elem in TG %}
               <td>{{elem}}</td>
               {% endfor %}
             </tr>
@@ -326,7 +332,7 @@
             </tr>
 
             <tr>
-              {% for elem in UK %}
+              {% for elem in UT %}
               <td>{{elem}}</td>
               {% endfor %}
             </tr>
@@ -349,8 +355,8 @@
     <footer>
       <a target="_blank" href="https://github.com/BryanCaldeira"><img style="margin-right: 15px;"
           src="https://img.icons8.com/material-outlined/208/000000/github.png" /></a>
-      <a target="_blank" href="https://api-covidlive.herokuapp.com/"><img style="margin-right: 15px;"
-          src="https://img.icons8.com/ios-filled/100/000000/api.png" /></a>
+      <!-- <a target="_blank" href="https://api-covidlive.herokuapp.com/"><img style="margin-right: 15px;"
+          src="https://img.icons8.com/ios-filled/100/000000/api.png" /></a> -->
     </footer>
 
     <script src="{% static 'JS/day-night-mode.js' %}"></script>

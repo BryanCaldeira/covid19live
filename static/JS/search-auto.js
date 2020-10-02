@@ -40,8 +40,12 @@ const states = [{
         elem: 'himachalpradesh'
     },
     {
+        name: 'Jammu & Kashmir',
+        elem: 'jammu&kashmir'
+    },
+    {
         name: 'Jharkhand',
-        elem: 'jarkhand'
+        elem: 'jharkhand'
     },
     {
         name: 'Karnataka',
@@ -97,7 +101,7 @@ const states = [{
     },
     {
         name: 'Telangana',
-        elem: 'telengana'
+        elem: 'telangana'
     },
     {
         name: 'Tripura',

@@ -287,11 +287,11 @@
 
   @media(min-width:1000px) {
     #col1 {
-      width: 36%;
+      width: 30%;
     }
 
     #col2 {
-      width: 64%;
+      width: 70%;
     }
   }
 

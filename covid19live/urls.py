@@ -25,7 +25,7 @@ urlpatterns = [
     path('meghalaya/', views.Main),
     path('mizoram/', views.Main),
     path('nagaland/', views.Main),
-    path('orissa/', views.Main),
+    path('odisha/', views.Main),
     path('punjab/', views.Main),
     path('rajasthan/', views.Main),
     path('sikkim/', views.Main),

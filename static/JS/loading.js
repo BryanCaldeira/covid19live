@@ -5,5 +5,5 @@ window.addEventListener("load", () => {
         const loader = document.querySelector(".loader");
         loader.className += " hidden"; //class "loader hidden"
         document.body.style.overflow = "scroll";
-    }, 3000);
+    }, 2000);
 })
