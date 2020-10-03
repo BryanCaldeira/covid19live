@@ -80,8 +80,8 @@ const states = [{
         elem: 'nagaland'
     },
     {
-        name: 'Orissa',
-        elem: 'orissa'
+        name: 'Odisha',
+        elem: 'odisha'
     },
     {
         name: 'Punjab',
