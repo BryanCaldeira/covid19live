@@ -223,6 +223,12 @@
     font-family: Roboto !important;
   }
 
+  .even_td,
+  .odd_td {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
 
 
   /*For Mobile screen view*/
